@@ -1,0 +1,194 @@
+\documentclass{article}
+\usepackage[cm]{fullpage}
+\usepackage{color}
+\usepackage{hyperref}
+
+\hypersetup{breaklinks=true,%
+pagecolor=white,%
+colorlinks=true,%
+linkcolor=cyan,%
+urlcolor=MyDarkBlue}
+
+\definecolor{MyDarkBlue}{rgb}{0,0.0,0.45}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Formatting parameters  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newlength{\tabin}
+\setlength{\tabin}{1em}
+\newlength{\secsep}
+\setlength{\secsep}{0.1cm}
+
+\setlength{\parindent}{0in}
+\setlength{\parskip}{0in}
+\setlength{\itemsep}{0in}
+\setlength{\topsep}{0in}
+\setlength{\tabcolsep}{0in}
+
+\definecolor{contactgray}{gray}{0.3}
+\pagestyle{empty}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%  Template Definitions  %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\lineunder}{\vspace*{-8pt} \\ \hspace*{-6pt} \hrulefill \\ \vspace*{-15pt}}
+\newcommand{\name}[1]{\begin{center}\textsc{\Huge#1}\\\end{center}}
+\newcommand{\program}[1]{\begin{center}\textsc{#1}\end{center}}
+\newcommand{\contact}[1]{\begin{center}\color{contactgray}{\small#1}\end{center}}
+
+\newenvironment{tabbedsection}[1]{
+  \begin{list}{}{
+      \setlength{\itemsep}{0pt}
+      \setlength{\labelsep}{0pt}
+      \setlength{\labelwidth}{0pt}
+      \setlength{\leftmargin}{\tabin}
+      \setlength{\rightmargin}{\tabin}
+      \setlength{\listparindent}{0pt}
+      \setlength{\parsep}{0pt}
+      \setlength{\parskip}{0pt}
+      \setlength{\partopsep}{0pt}
+      \setlength{\topsep}{#1}
+    }
+  \item[]
+}{\end{list}}
+
+\newenvironment{nospacetabbing}{
+    \begin{tabbing}
+}{\end{tabbing}\vspace{-1.2em}}
+
+\newenvironment{resume_header}{}{\vspace{0pt}}
+
+
+\newenvironment{resume_section}[1]{
+  \filbreak
+  \vspace{2\secsep}
+  \textsc{\large#1}
+  \lineunder
+  \begin{tabbedsection}{\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{resume_subsection}[2][]{
+  \textbf{#2} \hfill {\footnotesize #1} \hspace{2em}
+  \begin{tabbedsection}{0.5\secsep}
+}{\end{tabbedsection}}
+
+\newenvironment{subitems}{
+  \renewcommand{\labelitemi}{-}
+  \begin{itemize}
+      \setlength{\labelsep}{1em}
+}{\end{itemize}}
+
+\newenvironment{resume_employer}[4]{
+  \vspace{\secsep}
+  \textbf{#1} \\ 
+  \indent {\small #2} \hfill {\footnotesize#3 (#4)}
+  \begin{tabbedsection}{0pt}
+  \begin{subitems}
+}{\end{subitems}\end{tabbedsection}}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%     Start Document     %
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+\begin{resume_header}
+\name{Mushfiq K}
+\program{Graduate -- Computer Science Engineering}
+\contact{mushfiqk2001@gmail.com \hspace{1cm} +91 9900372011 \hspace{1cm}https://www.linkedin.com/in/mushfiq-k-a11444244/}
+\end{resume_header}
+
+\begin{resume_section}{About Me}
+  \begin{nospacetabbing}
+
+  \textbf{Technical Skills}  \= C, C++, Python, Java, HTML, CSS VBA, MySQL\\*
+  \textbf{Languages} \> English, Hindi, Kannada, Malayalam\\*
+  \textbf{Strengths} \> Listener, Teamwork, Problem solver\\*
+  \textbf{Interests} \> Football, Games , Reading Newspaper\\*
+  \end{nospacetabbing}
+
+\end{resume_section}
+
+\begin{resume_section}{Internships}
+  \begin{resume_employer}{Statistics Canada}{Enumerator, Census 2011}{Montreal, QC}{Summer 2011}
+    \item Helped and convinced respondents in their dwellings to fill in the census forms
+    \item Fixed discrepancies in respondents answers to prevent anomalies in the 2011 Census
+    \item Managed and sorted census report in Statistics Canada's online database
+  \end{resume_employer}
+  
+  \begin{resume_employer}{Blueline Computers}{Web Developer Intern}{Mangalore, Karnataka, Ind}{Sep 2022 - Oct 2022}
+    \item Worked on the front-end and DB side services.
+    \item Presented and Demonstrated the Project as a Academic curriculum.
+    \item Got to know how the work flows in a Industry standard.
+  \end{resume_employer}
+\end{resume_section}
+
+
+\begin{resume_section}{Competitions and Personal Projects}
+  \begin{resume_subsection}[(Feburary 2013)]{Rotman International Trading Competition}
+  \begin{subitems}
+    \item Developed quantitative strategies and applied them during the competition againts undergraduate and graduate students from schools around the world
+    \item Implemented Excel VBA macros to facilitate trading and to datamine the simulated cases for research
+    \item Wrote a bot for the Algo Case in VBA using their RIT client API that optimizes asset liquidation and profit from arbitrage
+    \end{subitems}
+  \end{resume_subsection}
+
+
+  \begin{resume_subsection}[(March 2013)]{Prism Trading Competition}
+  \begin{subitems}
+    \item Competed in the simulated Sales and Trading Case using the RIT software winning first place (1/12)
+    \item Calculated profitability of large offers using VWAP while market making.
+    \item Provided liquidity to the market, to profit from competitors large market orders.
+    \end{subitems}
+  \end{resume_subsection}
+
+
+
+  \begin{resume_subsection}[(December 2012)]{Intrade}
+    \begin{subitems}
+        \item Wrote an algorithm in Python to trade DOW contracts using Black-Scholes binary option pricing.
+        \item Automated trades using the Intrade API which required the use of XML processing using ETree libraries
+        \item Data mined live feed from various websites for live Index Pricing and Volatility by parsing HTML
+    \end{subitems}
+  \end{resume_subsection}
+  
+  \begin{resume_subsection}[(December 2011 - January 2012)]{Poker}
+    \begin{subitems}
+    \item Simultaneously played 24 cash game tables with 0.01\$/0.02\$ blinds on PokerStars
+    \item Played over 200,000 hands with 500\$+ profits with rakeback bonus (5bb/100)
+    \item Recorded every hand played using HoldemManager and statistically analyzed my unprofitable plays and opponents weaknesses to potentially take advantage of them
+    \end{subitems}
+  \end{resume_subsection}
+
+
+\begin{resume_section}{Education}
+  \begin{resume_subsection}[Mangalore (2019-2023)]{Bearys Institute of Technology}
+    \begin{subitems}
+      \item Honours Bachelor of Mathematics (Computer Science)
+      \item Cummulative Average: 93\%
+      \item Honors: Dean's Honours List
+    \end{subitems}
+  \end{resume_subsection}
+  
+  
+  \begin{resume_subsection}[Westmount, QC (2010--2012)]{Marianopolis College}
+    \begin{subitems}
+      \item Pure and Applied Science DEC
+      \item Cummulative Average: 93\%
+     \end{subitems}
+  \end{resume_subsection}
+\end{resume_section}
+
+
+ \begin{resume_subsection}[Westmount, QC (2010--2012)]{Marianopolis College}
+    \begin{subitems}
+      \item Pure and Applied Science DEC
+      \item Cummulative Average: 93\%
+     \end{subitems}
+  \end{resume_subsection}
+\end{resume_section}
+
+\end{document}
